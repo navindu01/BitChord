@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build-dev-debug:
-    if: github.ref != 'refs/heads/main'
+    if: github.ref != 'refs/heads/main' || github.repository != 'kushagrasinghx/BitChord'
     runs-on: ubuntu-latest
 
     steps:
@@ -36,7 +36,7 @@ jobs:
         path: app/build/outputs/apk/dev/debug/*.apk
 
   build-prod-release:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && github.repository == 'kushagrasinghx/BitChord'
     runs-on: ubuntu-latest
 
     steps:

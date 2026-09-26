@@ -11,7 +11,6 @@ package com.music.bitchord.ui.components
 
 import android.os.Build
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.shape.CornerBasedShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -137,7 +136,7 @@ fun Modifier.lightweightLiquidGlass(
                 Modifier
             },
         )
-        .border(GLASS_EDGE_WIDTH, GLASS_EDGE_COLOR, shape)
+        .decorativeBorder(GLASS_EDGE_WIDTH, GLASS_EDGE_COLOR, shape)
 }
 
 /**
@@ -162,7 +161,7 @@ fun Modifier.liquidGlass(shape: CornerBasedShape): Modifier {
     val reduceDynamicBlur by AppSettings.reduceDynamicBlur.collectAsStateWithLifecycle()
     if (reduceDynamicBlur) {
         return background(MaterialTheme.colorScheme.surface, shape)
-            .border(GLASS_EDGE_WIDTH, GLASS_EDGE_COLOR, shape)
+            .decorativeBorder(GLASS_EDGE_WIDTH, GLASS_EDGE_COLOR, shape)
     }
     val backdrop = LocalAppBackdrop.current
     val density = LocalDensity.current

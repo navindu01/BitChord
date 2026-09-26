@@ -83,11 +83,18 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.foundation.border
 
 fun Modifier.thumbnailBorder(shape: Shape): Modifier = composed {
-    this.border(
+    val showBorders by AppSettings.showBorders.collectAsStateWithLifecycle()
+    if (!showBorders) this else this.border(
         width = 1.dp,
         color = if (isSystemInDarkTheme()) Color.White.copy(alpha = 0.15f) else Color.Black.copy(alpha = 0.15f),
         shape = shape
     )
+}
+
+/** An optional decorative outline; functional selection and input outlines stay visible. */
+fun Modifier.decorativeBorder(width: Dp, color: Color, shape: Shape): Modifier = composed {
+    val showBorders by AppSettings.showBorders.collectAsStateWithLifecycle()
+    if (showBorders) this.border(width, color, shape) else this
 }
 
 /**

@@ -107,6 +107,7 @@ import com.music.bitchord.ui.components.ROW_DIVIDER_INSET
 import com.music.bitchord.ui.components.SongRow
 import com.music.bitchord.ui.components.rememberRemoteArtworkUrl
 import com.music.bitchord.ui.components.thumbnailBorder
+import com.music.bitchord.ui.components.decorativeBorder
 import com.music.bitchord.ui.components.TopBarContentGap
 import com.music.bitchord.ui.components.topBarHeight
 import com.music.bitchord.ui.haptics.Haptic
@@ -1292,7 +1293,7 @@ private fun DrillDownActionRow(
                 .size(50.dp)
                 .clip(CircleShape)
                 .background(MaterialTheme.colorScheme.surface.copy(alpha = 0.6f))
-                .border(0.5.dp, Color.White.copy(alpha = 0.10f), CircleShape)
+                .decorativeBorder(0.5.dp, Color.White.copy(alpha = 0.10f), CircleShape)
                 .clickable { if (songs.isNotEmpty()) onShuffle(songs) },
             contentAlignment = Alignment.Center,
         ) {
@@ -1308,7 +1309,7 @@ private fun DrillDownActionRow(
                 .height(50.dp)
                 .clip(CircleShape)
                 .background(MaterialTheme.colorScheme.surface.copy(alpha = 0.6f))
-                .border(0.5.dp, Color.White.copy(alpha = 0.10f), CircleShape)
+                .decorativeBorder(0.5.dp, Color.White.copy(alpha = 0.10f), CircleShape)
                 .clickable { if (songs.isNotEmpty()) onSongClick(songs, 0) }
                 .padding(horizontal = 32.dp),
             verticalAlignment = Alignment.CenterVertically,

@@ -120,6 +120,7 @@ import com.music.bitchord.ui.components.SongRow
 import com.music.bitchord.ui.components.libraryGrid
 import com.music.bitchord.ui.components.lightweightLiquidGlass
 import com.music.bitchord.ui.components.thumbnailBorder
+import com.music.bitchord.ui.components.decorativeBorder
 import com.music.bitchord.ui.components.detailSkeleton
 import com.music.bitchord.ui.components.topBarContentPadding
 import com.music.bitchord.ui.components.trackColumnWidth
@@ -825,7 +826,7 @@ private fun DetailSearchField(
             .height(46.dp)
             .clip(PILL_SHAPE)
             .background(MaterialTheme.colorScheme.surface.copy(alpha = 0.6f))
-            .border(0.5.dp, Color.White.copy(alpha = 0.10f), PILL_SHAPE)
+            .decorativeBorder(0.5.dp, Color.White.copy(alpha = 0.10f), PILL_SHAPE)
             .padding(horizontal = 12.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
